@@ -1,0 +1,6 @@
+CREATE TABLE `jokes` (
+ `id` int NOT NULL AUTO_INCREMENT,
+ `question` TEXT NOT NULL,
+ `answer` TEXT NOT NULL,
+ PRIMARY KEY (`id`)
+) ENGINE = InnoDB DEFAULT CHARSET = utf8;
