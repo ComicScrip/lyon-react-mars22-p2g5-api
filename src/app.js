@@ -21,6 +21,18 @@ app.get('/jokes', async (req, res) => {
   }
 });
 
+app.get('/jokes/random', async (req, res) => {
+  try {
+    const [jokes] = await db
+      .promise()
+      .query('SELECT * FROM jokes ORDER BY RAND ()');
+    res.send(jokes);
+  } catch (err) {
+    console.error(err);
+    res.status(500).send('something wrong happened');
+  }
+});
+
 app.get('/jokes/:id', async (req, res) => {
   try {
     const [[jokes]] = await db
