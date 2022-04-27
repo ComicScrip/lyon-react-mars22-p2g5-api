@@ -21,7 +21,7 @@ db.connect((err) => {
 
 app.get('/jokes', async (req, res) => {
   try {
-    const [[jokes]] = await db.promise().query('SELECT * FROM jokes');
+    const [jokes] = await db.promise().query('SELECT * FROM jokes');
     res.send(jokes);
   } catch (err) {
     console.error(err);
