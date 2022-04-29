@@ -13,8 +13,8 @@ db.connect((err) => {
 
 app.get('/jokes', async (req, res) => {
   try {
-    const [jokes] = await db.promise().query('SELECT * FROM jokes');
-    res.send(jokes);
+    const [joke] = await db.promise().query('SELECT * FROM jokes');
+    res.send(joke);
   } catch (err) {
     console.error(err);
     res.status(500).send('something wrong happened');
@@ -23,10 +23,10 @@ app.get('/jokes', async (req, res) => {
 
 app.get('/jokes/random', async (req, res) => {
   try {
-    const [jokes] = await db
+    const [joke] = await db
       .promise()
       .query('SELECT * FROM jokes ORDER BY RAND ()');
-    res.send(jokes);
+    res.send(joke[0]);
   } catch (err) {
     console.error(err);
     res.status(500).send('something wrong happened');
@@ -35,11 +35,11 @@ app.get('/jokes/random', async (req, res) => {
 
 app.get('/jokes/:id', async (req, res) => {
   try {
-    const [[jokes]] = await db
+    const [[joke]] = await db
       .promise()
       .query('SELECT * FROM jokes WHERE id = ?', [req.params.id]);
-    if (jokes) res.send(jokes);
-    console.log(jokes);
+    if (joke) res.send(joke);
+    console.log(joke);
   } catch (err) {
     console.error(err);
     res.status(500).send('something wrong happened');
