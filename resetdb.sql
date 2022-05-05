@@ -24,3 +24,14 @@ VALUES ('Qu’est-ce qu’un chat dans l’espace ?', 'Un chatellite'),
 ('Que fait on après avoir serré les mains d’un lépreux ?', 'On lui rend'),
 ('Comment fait-on tourner un belge en rond ?', 'Met le dans une pièce ronde et dis lui qu’il y une frite dans le coin'),
 ('Pourquoi un belge nage-il toujours au fond ?', 'Parce que dans le fond ils ne sont pas si cons');
+
+
+CREATE TABLE `scores` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `player` varchar(100) CHARACTER SET utf8mb4 NOT NULL,
+  `score` decimal(10,0) NOT NULL,
+  `Date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4;
+
+INSERT INTO `scores` VALUES (7,'Jean-Jérome',40,'2022-05-04 11:19:41'),(8,'Marie-Odile',45,'2022-05-04 11:20:25'),(9,'Mégère',50,'2022-05-04 11:20:52'),(10,'Jacquouille',6,'2022-05-04 11:26:30'),(11,'Edmond',2,'2022-05-04 11:28:56'),(12,'Johnny la Brute',27,'2022-05-04 11:37:07'),(13,'La reine des neiges',20,'2022-05-04 14:21:04'),(14,'Jacqueline',40,'2022-05-04 16:17:11'),(15,'Ursule',40,'2022-05-04 16:18:27'),(16,'Cunégonde',70,'2022-05-04 16:20:09'),(17,'Dark Vador',27,'2022-05-04 16:20:45'),(18,'Flétan',65,'2022-05-04 16:21:52'),(19,'Ronald MC',27,'2022-05-04 16:21:55'),(20,'Cécé',33,'2022-05-04 18:45:28');
