@@ -2,7 +2,6 @@ const express = require('express');
 const db = require('./db');
 const cors = require('cors');
 const Joi = require('joi');
-const { json } = require('express/lib/response');
 
 const app = express();
 
