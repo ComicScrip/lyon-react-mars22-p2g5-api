@@ -129,9 +129,6 @@ app.get('/wildquiz', async (req, res) => {
   }
 });
 
-/* const string = JSON.stringify(wild);
-    const array = string.substring(1, wild.length - 1); */
-
 app.get('/lyonquiz', async (req, res) => {
   try {
     const [lyonquiz] = await db.promise().query('SELECT * FROM lyonquiz');
