@@ -8,10 +8,6 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-db.connect((err) => {
-  if (err) console.error('error connecting to db');
-});
-
 app.get('/scores', async (req, res) => {
   try {
     const [scores] = await db
