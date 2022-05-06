@@ -43,7 +43,7 @@
     "eslint-plugin-promise": "^5.2.0",
     "husky": "^7.0.4",
     "lint-staged": "^12.3.7",
-    "nodemon": "^2.0.15",
+    "nodemon": "^2.0.16",
     "prettier": "2.6.2"
   },
   "lint-staged": {

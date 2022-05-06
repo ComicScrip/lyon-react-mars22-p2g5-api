@@ -111,4 +111,38 @@ app.get('/jokes/:id', async (req, res) => {
   }
 });
 
+app.get('/wildquiz', async (req, res) => {
+  try {
+    const [wildquiz] = await db.promise().query('SELECT * FROM wildquiz');
+    const results = wildquiz.map((quiz) => {
+      return {
+        ...quiz,
+        incorrect_answers: JSON.parse(quiz.incorrect_answers),
+      };
+    });
+    const array = { results };
+    res.send(array);
+  } catch (err) {
+    console.log(err);
+    res.status(500).send('something wrong happened');
+  }
+});
+
+app.get('/lyonquiz', async (req, res) => {
+  try {
+    const [lyonquiz] = await db.promise().query('SELECT * FROM lyonquiz');
+    const results = lyonquiz.map((quiz) => {
+      return {
+        ...quiz,
+        incorrect_answers: JSON.parse(quiz.incorrect_answers),
+      };
+    });
+    const array = { results };
+    res.send(array);
+  } catch (err) {
+    console.log(err);
+    res.status(500).send('something wrong happened');
+  }
+});
+
 module.exports.app = app;
